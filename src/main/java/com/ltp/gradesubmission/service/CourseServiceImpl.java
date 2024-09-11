@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 
 import com.ltp.gradesubmission.entity.Course;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @Service
 public class CourseServiceImpl implements CourseService {
 

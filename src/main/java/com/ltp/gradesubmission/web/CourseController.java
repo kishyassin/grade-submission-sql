@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ltp.gradesubmission.entity.Course;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @RestController
 @RequestMapping("/course")
 public class CourseController {
