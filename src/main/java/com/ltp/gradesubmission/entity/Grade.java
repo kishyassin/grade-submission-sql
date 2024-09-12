@@ -34,20 +34,9 @@ public class Grade {
     @JoinColumn(name = "student_id", referencedColumnName = "id")
     private Student student;
 
-    public Long getId() {
-        return this.id;
-    }
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "course_id", referencedColumnName = "id")
+    private Course course;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getScore() {
-        return this.score;
-    }
-
-    public void setScore(String score) {
-        this.score = score;
-    }
 
 }
