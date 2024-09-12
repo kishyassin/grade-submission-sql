@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotBlank;
+
+import com.ltp.gradesubmission.validation.Score;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,6 +33,7 @@ public class Grade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Score
     @Column(name = "score", nullable = false)
     private String score;
 
