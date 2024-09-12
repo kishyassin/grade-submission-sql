@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -52,7 +54,12 @@ public class Student {
     private List<Grade> grades;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "students")
+    @ManyToMany()
+        @JoinTable(
+        name = "course_student",
+        joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id")
+    )
     private Set<Course> courses;
 
     
