@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "62e9bbe9-c5fd-42ca-82b3-11df077d7aa6",
+		"_postman_id": "3d963751-2439-4f15-8024-69189f66a663",
 		"name": "Grade Requests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "1206008"
+		"_exporter_id": "35355399"
 	},
 	"item": [
 		{
@@ -100,6 +100,26 @@
 							"path": [
 								"student",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enrolled Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/student/1/courses",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"student",
+								"1",
+								"courses"
 							]
 						}
 					},
@@ -229,7 +249,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"score\": \"A+\"\n}",
+							"raw": "{\n    \"id\": 1,\n    \"score\": \"C+\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -351,7 +371,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/course/1",
+							"raw": "localhost:8080/student/1",
 							"host": [
 								"localhost"
 							],
@@ -359,6 +379,47 @@
 							"path": [
 								"student",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enroll Student",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/course/1/student/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"1",
+								"student",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enrolled Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/course/1/students",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"1",
+								"students"
 							]
 						}
 					},

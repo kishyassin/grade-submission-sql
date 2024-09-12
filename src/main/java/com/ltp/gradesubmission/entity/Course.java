@@ -2,6 +2,7 @@ package com.ltp.gradesubmission.entity;
 
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -52,4 +56,13 @@ public class Course {
     @JsonIgnore
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     List<Grade> grades;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(
+        name = "course_student", // Join table name
+        joinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id")
+    )  
+    private Set<Student> students;
 }
